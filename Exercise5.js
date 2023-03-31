@@ -1,6 +1,6 @@
-//¿Cuanto es el X% de X número?
+//¿Cuanto es el X% de Y número?
 function percentages(persentage, number){
-    let operation = number * (persentage/100);
+    let operation = (persentage/100) * number ;
     let result = `the ${persentage}% of ${number} is ${operation}`;
     return result;
 }
