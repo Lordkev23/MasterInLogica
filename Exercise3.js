@@ -8,7 +8,9 @@ function similarity(frase, search){
     let result = 0;
 
     if(cleanText.includes(search)){
+        //.split() creates an Array of words in cleanText
         let words = cleanText.split(" ");
+
         let map = {};
 
         for(let word of words){
@@ -16,10 +18,16 @@ function similarity(frase, search){
                 map[word]++;
 
             }else{
+                //a key is created in the map object and the value is assigned 1
                 map[word] = 1;
             }
         }
-
+        // En map se almacena el texto con el valor de cada clave(palabra)
+        // Search busca en map la clave que coincida con su "valor actual" y devuelve su valor
+        //ej:
+        //search = kevin -> valor actual de Search
+        //map = {hello:1 my:1 name:1 is:1 kevin:3 you:1 know:1 like:1 arnold:1}
+        //retorna 3 porque xq el valor de la clave kevin es 3.
         result = map[search];
 
     }else{
