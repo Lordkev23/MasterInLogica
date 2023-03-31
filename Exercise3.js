@@ -3,30 +3,31 @@
 // en la función
 
 function similarity(frase, search){
-    let cleanText = frase.toLowerCase().replace(/[!¡-.,]/gi, "");
+    //orden of these characters are so important: /[!¡,\-.]/gi
+    let cleanText = frase.toLowerCase().replace(/[!¡,\-.]/gi, ""); 
     let result = 0;
 
     if(cleanText.includes(search)){
-        let words = cleanText.split(" ")
-        let map = {}
+        let words = cleanText.split(" ");
+        let map = {};
 
         for(let word of words){
             if(map[word]){
-                map[word]++
+                map[word]++;
 
             }else{
-                map[word] = 1
+                map[word] = 1;
             }
         }
 
-        result = map[search]
+        result = map[search];
 
     }else{
-        result = 0
+        result = 0;
     }
-    return result
+    return result;
 }
 console.log(
     "Number of similarities in the frase: ",
-    similarity("hello, my Name is Kevin. You know, Kevin, like Kevin Arnold")
+    similarity("hello, my Name is Kevin. You know, Kevin, like Kevin Arnold", "kevin")
 );
