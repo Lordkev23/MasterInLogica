@@ -11,6 +11,6 @@ function fizzBuzz(){
         } else youSee= i.toString();
         acc += youSee + "\n";
     }
-    return acc
+    return acc;
 }
 console.log(fizzBuzz());
